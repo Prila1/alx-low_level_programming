@@ -1,1 +1,9 @@
-0x00. C - Hello, World
+0x12-singly_linked_lists
+
+Print list
+List length
+Add node
+Add node at the end
+Free list
+The Hare and the Tortoise
+Real programmers can write assembly code in any language
