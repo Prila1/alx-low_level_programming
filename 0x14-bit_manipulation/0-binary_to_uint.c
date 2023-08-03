@@ -1,29 +1,36 @@
 #include "main.h"
 
 /**
- * print_binary - Prints the binary representation of a number.
- * @n: The number to be converted and printed.
+ * binary_to_uint - prints the binary representation of a number.
+ * @m: The number to be converted and printed.
  *
- * Description: This function takes an unsigned long int as input and
- * prints its binary representation without using arrays, malloc, %, or / operators.
+ * Return: unsigned int.
  */
-void print_binary(unsigned long int n)
+unsigned int binary_to_uint(const char *m)
 {
-	unsigned long int mask = 1UL << (sizeof(unsigned long int) * 8 - 1);
-	int started_printing = 0;
+	unsigned int ui;
+	int len, base_two;
 
-	while (mask > 0)
+	if (!m)
+		return (0);
+
+	ui = 0;
+
+	for (len = 0; m[len] != '\0'; len++)
+		;
+
+	for (len--, base_two = 1; len >= 0; len--, base_two *= 2)
 	{
-		if (n & mask)
+		if (m[len] != '0' && m[len] != '1')
 		{
-			_putchar('1');
-			started_printing = 1;
+			return (0);
 		}
-		else if (started_printing)
-			_putchar('0');
 
-		mask >>= 1;
+		if (m[len] & 1)
+		{
+			ui += base_two;
+		}
 	}
-	if (!started_printing)
-		_putchar('0');
+
+	return (ui);
 }
