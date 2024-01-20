@@ -9,9 +9,9 @@
  *
  * Return: Index of the value in the array, -1 if not found or array is NULL
  */
-int linear_search(int *array, size_f size, int value)
+int linear_search(int *array, size_t size, int value)
 {
-	size_f i;
+	size_t i;
 
 	if (!array)
 		return (-1);
